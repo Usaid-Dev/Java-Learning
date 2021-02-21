@@ -15,8 +15,13 @@ public class Main {
 
         //for table
         int table = 8;
-        int tableLength = 30;
+        int tableLength = 10;
 
+        for (int tableNumber = tableLength; tableNumber >= 1; tableNumber--) {
+            //2 X 1 = 2
+            System.out.println(table + " X " + tableNumber + " = " + (table * tableNumber));
+        }
+        System.out.println("=======");
         for (int tableNumber = 1; tableNumber <= tableLength; tableNumber++) {
             //2 X 1 = 2
             System.out.println(table + " X " + tableNumber + " = " + (table * tableNumber));
