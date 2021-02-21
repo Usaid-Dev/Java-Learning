@@ -15,7 +15,7 @@ public class Main {
 
         //for table
         int table = 8;
-        int tableLength = 15;
+        int tableLength = 30;
 
         for (int tableNumber = 1; tableNumber <= tableLength; tableNumber++) {
             //2 X 1 = 2
@@ -24,7 +24,9 @@ public class Main {
 
 
         // while loop
-        String[] names = {"Usaid", "Abrar", "ASA"};
+        String[] names = {
+                "Usaid", "Abrar", "Ishaq"
+        };
         int arrayIndex = 0;
 
         while (arrayIndex < names.length) {
