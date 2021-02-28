@@ -30,7 +30,7 @@ public class Main {
 
         // while loop
         String[] names = {
-                "Usaid", "Abrar", "Ishaq"
+                "Usaid", "Abrar", "Ishaq" ,
         };
         int arrayIndex = 0;
 
