@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class practice {
+public class Practice {
 
     static Scanner scanner;
 
