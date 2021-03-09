@@ -14,7 +14,7 @@ public class Main {
 
     public static void pin(){
 
-        System.out.println("Enter Your Pin Code");
+        System.out.println("Enter Your Pin Code and please input number not alphabet");
         int input = scanner.nextInt();
         if (input == 1234) {
             menu();
