@@ -9,11 +9,19 @@ public class Main {
     private static int anotherTransaction;
     private static ArrayList<String> logs;
 
+    private static void name() {
+        System.out.print(" Enter Your Name : ");
+        String NameInput = in.nextLine();
+        System.out.println(" Welcome " + NameInput + " !! ");
+    }
+
+
     private static void pin() {
-        System.out.println("Enter Your Pin Code and please input number not alphabet");
+        System.out.println(" Enter Your Pin Code and please input number not a alphabet ");
         int input = in.nextInt();
         if (input == 1234) {
-            transaction();
+
+            greetings();
         } else {
             System.out.println("Invalid.. Please Try Again");
             pin();
@@ -21,24 +29,29 @@ public class Main {
     }
 
     private static void greetings() {
-        System.out.println("Welcome to Atm you can withdraw, deposit, and balance you have $0");
+        System.out.println(" Welcome to Atm you can withdraw, deposit, and balance here ");
+        System.out.println("              But now your balance is $0 ");
+        System.out.println("              Soo first add the balance");
+
     }
 
     public static void main(String[] args) {
         in = new Scanner(System.in);
         logs = new ArrayList<>();
+        name();
         pin();
-        greetings();
         transaction();
     }
 
 
     public static void transaction() {
         int choice;
-        System.out.println("1. Withdraw ");
-        System.out.println("2. Deposit");
-        System.out.println("3. Balance");
+        System.out.println("0. For exit");
+        System.out.println("1. Withdraw money ");
+        System.out.println("2. Add money");
+        System.out.println("3. View Balance");
         System.out.println("4. View Transactions");
+        System.out.println("5. Clear Transactions");
         System.out.println("---------------------" +
                 "Please select an option: " +
                 "---------------------");
@@ -46,9 +59,14 @@ public class Main {
         choice = in.nextInt();
 
         switch (choice) {
+
+            case 0:
+                System.out.println(" Thanks for coming to Atm ");
+                return;
+
             case 1:
                 float amount;
-                System.out.println("Please enter an amount you would like to withdraw.");
+                System.out.println(" Please enter an amount you would like to withdraw. ");
                 amount = in.nextFloat();
                 if (amount > balance || amount == 0) {
                     System.out.println("You have a insufficient with your funds\n\n");
@@ -57,7 +75,7 @@ public class Main {
                     // They have some money
                     // update balance
                     balance = balance - amount;
-                    String log = "You have withdrawn " + amount + " and your new balance is now. " + balance;
+                    String log = " You have withdrawn " + amount + " and your new balance is now. " + balance;
                     logs.add(log);
                     System.out.println(log);
                     anotherTransaction();
@@ -66,11 +84,11 @@ public class Main {
             case 2:
                 // This is to deposit
                 float deposit;
-                System.out.println("Please enter the amount you would like to put in: ");
+                System.out.println(" Please enter the amount you would like to put in: ");
                 deposit = in.nextFloat();
                 // update balance
                 balance = deposit + balance;
-                String log = "You have deposited " + deposit + " new balance is. " + balance;
+                String log = " You have deposited " + deposit + " new balance is. " + balance;
                 logs.add(log);
                 System.out.println(log);
                 anotherTransaction();
@@ -78,7 +96,7 @@ public class Main {
 
             case 3:
                 // to balance
-                System.out.println("Your balance is " + balance + "\n");
+                System.out.println(" Your balance is " + balance + "\n");
                 anotherTransaction();
                 break;
 
@@ -90,18 +108,24 @@ public class Main {
                 anotherTransaction();
                 break;
 
+            case 5:
+                // to clear transactions
+                logs.removeAll(logs);
+                anotherTransaction();
+                break;
+
         }
     }
 
     private static void anotherTransaction() {
-        System.out.println("Do you want another transaction? \n\nPress 1 for anotherTransaction \n2 To exit.");
+        System.out.println(" Do you want another transaction? \n\nPress 1 for anotherTransaction \n2 To exit. ");
         anotherTransaction = in.nextInt();
         if (anotherTransaction == 1) {
             transaction(); // Call method
         } else if (anotherTransaction == 2) {
-            System.out.println("Thank you for coming to Atm");
+            System.out.println(" Thank you for coming to Atm ");
         } else {
-            System.out.println("Invalid choice \n\n");
+            System.out.println(" Invalid choice \n\n ");
             anotherTransaction();
         }
     }
