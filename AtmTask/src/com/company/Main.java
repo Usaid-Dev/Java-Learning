@@ -8,28 +8,29 @@ public class Main {
     private static float balance = 0; // For everyone they will get 0
     private static int anotherTransaction;
     private static ArrayList<String> logs;
+    private static String name;
 
     private static void name() {
         System.out.print(" Enter Your Name : ");
-        String NameInput = in.nextLine();
-        System.out.println(" Welcome " + NameInput + " !! ");
+        name = in.nextLine();
+        System.out.println(" Welcome " + name + " !! ");
     }
 
 
     private static void pin() {
-        System.out.println(" Enter Your Pin Code and please input number not a alphabet ");
+        System.out.println(" Enter Your Pin Code " + name + " and please input number not a alphabet ");
         int input = in.nextInt();
         if (input == 1234) {
 
             greetings();
         } else {
-            System.out.println("Invalid.. Please Try Again");
+            System.out.println(" Invalid.. Please Try Again " + name);
             pin();
         }
     }
 
     private static void greetings() {
-        System.out.println(" Welcome to Atm you can withdraw, deposit, and balance here ");
+        System.out.println(" Welcome to Atm "+ name +" you can withdraw, deposit, and balance here ");
         System.out.println("              But now your balance is $0 ");
         System.out.println("              Soo first add the balance");
 
@@ -61,12 +62,12 @@ public class Main {
         switch (choice) {
 
             case 0:
-                System.out.println(" Thanks for coming to Atm ");
+                System.out.println(" Thanks for coming to Atm " + name );
                 return;
 
             case 1:
                 float amount;
-                System.out.println(" Please enter an amount you would like to withdraw. ");
+                System.out.println(" Please enter an amount " + name + "you would like to withdraw. ");
                 amount = in.nextFloat();
                 if (amount > balance || amount == 0) {
                     System.out.println("You have a insufficient with your funds\n\n");
@@ -84,7 +85,7 @@ public class Main {
             case 2:
                 // This is to deposit
                 float deposit;
-                System.out.println(" Please enter the amount you would like to put in: ");
+                System.out.println(" Please enter the amount " + name + "you would like to put in: ");
                 deposit = in.nextFloat();
                 // update balance
                 balance = deposit + balance;
@@ -110,7 +111,7 @@ public class Main {
 
             case 5:
                 // to clear transactions
-                logs.removeAll(logs);
+                logs.clear();
                 anotherTransaction();
                 break;
 
@@ -118,12 +119,12 @@ public class Main {
     }
 
     private static void anotherTransaction() {
-        System.out.println(" Do you want another transaction? \n\nPress 1 for anotherTransaction \n2 To exit. ");
+        System.out.println(" Do you want another transaction?" + name + " \n\nPress 1 for anotherTransaction \n2 To exit. ");
         anotherTransaction = in.nextInt();
         if (anotherTransaction == 1) {
             transaction(); // Call method
         } else if (anotherTransaction == 2) {
-            System.out.println(" Thank you for coming to Atm ");
+            System.out.println(" Thank you for coming to Atm " + name);
         } else {
             System.out.println(" Invalid choice \n\n ");
             anotherTransaction();
