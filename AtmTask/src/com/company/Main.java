@@ -1,5 +1,4 @@
 package com.company;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -71,7 +70,7 @@ public class Main {
                 amount = in.nextFloat();
                 if (amount > balance || amount == 0) {
                     System.out.println("You have a insufficient with your funds\n\n");
-                    anotherTransaction(); // If they want another transaction
+                    anotherTransaction();// If they want another transaction
                 } else {
                     // They have some money
                     // update balance
@@ -97,7 +96,7 @@ public class Main {
 
             case 3:
                 // to balance
-                System.out.println(" Your balance is " + balance + "\n");
+                System.out.println(" Your balance is " + balance +  "\n");
                 anotherTransaction();
                 break;
 
