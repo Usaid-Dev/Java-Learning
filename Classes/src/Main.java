@@ -13,16 +13,8 @@
  * Encapsulation
  * */
 
-/*
- * TASK
- * Make output something like this
- * ==================WELCOME to Mobile SHAP ==================
- * 1. Buy an iPhone
- * 2. List Sales
- * 3. KICK ASS
- * */
 
-
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -31,6 +23,7 @@ public class Main {
 
     private static void Welcome() {
         System.out.println(" Welcome to Mobile Shop ");
+        System.out.println(" ---------------------- ");
         System.out.println(" Select these options ");
     }
 
@@ -38,7 +31,7 @@ public class Main {
         in = new Scanner(System.in);
         shop = new Shop();
         Welcome();
-        Selection ();
+        Selection();
     }
 
     public static void Selection() {
@@ -47,7 +40,8 @@ public class Main {
 
         System.out.println("0. For exit the Shop ");
         System.out.println("1. For buy a phone ");
-        System.out.println("2. For Exchanging a phone ");
+        System.out.println("2. For list ");
+        System.out.println("3. For Exchange ");
         System.out.println("---------------------" +
                 "Please select an option: " +
                 "---------------------");
@@ -55,10 +49,50 @@ public class Main {
         choice = in.nextInt();
 
         switch (choice) {
-            case 1:
 
+            case 0:
+                System.out.println(" Thanks for coming to the shop ");
+                return;
+            case 1:
+                System.out.println(" Enter your name ");
+                in.nextLine();
+                String name = in.nextLine();
+                System.out.println(" Enter your Age ");
+                int age = in.nextInt();
+                System.out.println(" Enter your Cnic ");
+                int cnic = in.nextInt();
+                Buyer buyer = new Buyer(name,age,cnic);
+
+                System.out.println(" Enter your model ");
+                in.nextLine();
+                String model = in.nextLine();
+                iPhone iPhone = new iPhone(model);
+
+                buyer.buy(iPhone);
+
+                shop.addBuyer(buyer);
+                break;
+
+            case 2:
+                shop.listBuyers();
+                break;
+
+            case 3:
+                in.nextLine();
+                System.out.println(" Enter your name ");
+                String buyerName = in.nextLine();
+                int indexOfBuyer = shop.buyers.indexOf(new Buyer(buyerName,0,0));
+                Buyer oldBuyer = shop.buyers.get(indexOfBuyer);
+
+                System.out.println(" Enter your model ");
+                String type = in.nextLine();
+                iPhone apple = new iPhone(type);
+                oldBuyer.exchange(apple);
                 break;
 
         }
+
+        System.out.println("  ");
+        Selection();
     }
 }
