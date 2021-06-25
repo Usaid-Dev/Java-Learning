@@ -13,31 +13,27 @@ public class Main {
             System.out.println(friends[loopVar]);
         }
 
+        System.out.println("=======");
+
         //for table
         int table = 8;
         int tableLength = 10;
 
-        for (int tableNumber = tableLength; tableNumber >= 1; tableNumber--) {
-            //2 X 1 = 2
-            System.out.println(table + " X " + tableNumber + " = " + (table * tableNumber));
-        }
-        System.out.println("=======");
+        // normal table
         for (int tableNumber = 1; tableNumber <= tableLength; tableNumber++) {
             //2 X 1 = 2
             System.out.println(table + " X " + tableNumber + " = " + (table * tableNumber));
         }
 
+        System.out.println("=======");
 
-        // while loop
-        String[] names = {
-                "Usaid", "Abrar", "Ishaq" ,
-        };
-        int arrayIndex = 0;
-
-        while (arrayIndex < names.length) {
-            System.out.println(names[arrayIndex++]);
+        // reverse table
+        for (int tableNumber = tableLength; tableNumber >= 1; tableNumber--) {
+            //2 X 1 = 2
+            System.out.println(table + " X " + tableNumber + " = " + (table * tableNumber));
         }
 
+        System.out.println("=======");
 
     }
 }

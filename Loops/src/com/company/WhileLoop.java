@@ -21,7 +21,9 @@ public class WhileLoop {
             }
         }
 
-        String[] names = {"Usaid","Abrar","ASA"};
+        System.out.println("=======");
+
+        String[] names = {"Usaid","Abrar","Assad"};
         int arrayIndex = 0;
 
         while (arrayIndex < names.length){

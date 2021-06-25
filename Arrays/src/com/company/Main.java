@@ -21,6 +21,8 @@ public class Main {
         friendsNames [1] = "Abrar";
         friendsNames [2] = "Assad";
 
+        friendsNames[0] = "Ishaq";
+
         System.out.println(friendsNames[0]);
         System.out.println(friendsNames[1]);
         System.out.println(friendsNames[2]);

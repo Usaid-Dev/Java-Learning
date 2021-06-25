@@ -66,10 +66,11 @@ public class Main {
 
             case 1:
                 float amount;
-                System.out.println(" Please enter an amount " + name + "you would like to withdraw. ");
+                System.out.println(" Please enter an amount " + name + " you would like to withdraw. ");
                 amount = in.nextFloat();
                 if (amount > balance || amount == 0) {
-                    System.out.println("You have a insufficient with your funds\n\n");
+                    System.out.println(" You have a insufficient with your funds ");
+                    System.out.println("==================");
                     anotherTransaction();// If they want another transaction
                 } else {
                     // They have some money
@@ -78,6 +79,7 @@ public class Main {
                     String log = " You have withdrawn " + amount + " and your new balance is now. " + balance;
                     logs.add(log);
                     System.out.println(log);
+                    System.out.println("==================");
                     anotherTransaction();
                 }
                 break;
@@ -91,12 +93,14 @@ public class Main {
                 String log = " You have deposited " + deposit + " new balance is. " + balance;
                 logs.add(log);
                 System.out.println(log);
+                System.out.println("==================");
                 anotherTransaction();
                 break;
 
             case 3:
                 // to balance
                 System.out.println(" Your balance is " + balance +  "\n");
+                System.out.println("==================");
                 anotherTransaction();
                 break;
 
@@ -105,12 +109,20 @@ public class Main {
                 for (String transaction : logs) {
                     System.out.println(transaction);
                 }
+
+                if (logs.isEmpty()){
+                    System.out.println(" Nothing is here to show ");
+                }
+
+                System.out.println("==================");
                 anotherTransaction();
                 break;
 
             case 5:
                 // to clear transactions
                 logs.clear();
+                System.out.println(" All transaction is clear ");
+                System.out.println("===========================");
                 anotherTransaction();
                 break;
 
@@ -125,7 +137,7 @@ public class Main {
         } else if (anotherTransaction == 2) {
             System.out.println(" Thank you for coming to Atm " + name);
         } else {
-            System.out.println(" Invalid choice \n\n ");
+            System.out.println(" Invalid choice!! Read again ");
             anotherTransaction();
         }
     }

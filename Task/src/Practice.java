@@ -6,7 +6,14 @@ public class Practice {
 
     public static void main(String[] args) {
         scanner = new Scanner(System.in);
+        welcome();
+        System.out.println("================");
         menu();
+
+    }
+
+     static void welcome(){
+         System.out.println(" Welcome to Calculator");
     }
 
     static void menu() {
@@ -14,10 +21,10 @@ public class Practice {
         System.out.println("2 for Subtract");
         System.out.println("3 for Multiply");
         System.out.println("4 for Divide");
-        System.out.println("0 to kato");
+        System.out.println("0 for Exit");
         int selectedOption = scanner.nextInt();
         if(selectedOption == 0){
-            System.out.println("BYEEE JANI");
+            System.out.println(" Thanks for Coming ");
             return;
         }
 
@@ -43,9 +50,10 @@ public class Practice {
                 printAnswer("/",val1,val2,val1/val2);
                 break;
             default:
-                System.out.println("Bhai sahe s prh! kia likhra h? ajeeb!");
+                System.out.println(" Please read again!! ");
         }
 
+        System.out.println("=============");
         menu();
     }
 

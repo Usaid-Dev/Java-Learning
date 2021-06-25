@@ -22,9 +22,10 @@ public class Main {
     private static Scanner in;
 
     private static void Welcome() {
-        System.out.println(" Welcome to Mobile Shop ");
-        System.out.println(" ---------------------- ");
+        System.out.println(" Welcome to Iphone shop ");
+        System.out.println("------------------------");
         System.out.println(" Select these options ");
+        System.out.println("------------------------");
     }
 
     public static void main(String[] args) {
@@ -34,12 +35,13 @@ public class Main {
         Selection();
     }
 
+
     public static void Selection() {
 
         int choice;
 
         System.out.println("0. For exit the Shop ");
-        System.out.println("1. For buy a phone ");
+        System.out.println("1. For buy a Iphone ");
         System.out.println("2. For list ");
         System.out.println("3. For Exchange ");
         System.out.println("---------------------" +
@@ -59,22 +61,33 @@ public class Main {
                 String name = in.nextLine();
                 System.out.println(" Enter your Age ");
                 int age = in.nextInt();
+                if (age < 18) {
+                    System.out.println(" Only 18+ can buy phone from here");
+                    return;
+                }
                 System.out.println(" Enter your Cnic ");
                 int cnic = in.nextInt();
+
                 Buyer buyer = new Buyer(name,age,cnic);
 
-                System.out.println(" Enter your model ");
+                System.out.println(" Enter your Iphone model here and Please enter full name of your Iphone ");
+                System.out.println(" ------------------------------$$-------------------------------------- ");
                 in.nextLine();
                 String model = in.nextLine();
                 iPhone iPhone = new iPhone(model);
 
                 buyer.buy(iPhone);
 
+                System.out.println("Have a good day...!");
+
                 shop.addBuyer(buyer);
                 break;
 
             case 2:
                 shop.listBuyers();
+                if (buyer  0){
+                    System.out.println(" There is no buyer in the list ");
+                }
                 break;
 
             case 3:
@@ -84,7 +97,7 @@ public class Main {
                 int indexOfBuyer = shop.buyers.indexOf(new Buyer(buyerName,0,0));
                 Buyer oldBuyer = shop.buyers.get(indexOfBuyer);
 
-                System.out.println(" Enter your model ");
+                System.out.println(" Enter your Iphone model ");
                 String type = in.nextLine();
                 iPhone apple = new iPhone(type);
                 oldBuyer.exchange(apple);
