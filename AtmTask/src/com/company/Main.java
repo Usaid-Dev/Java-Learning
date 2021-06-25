@@ -99,7 +99,7 @@ public class Main {
 
             case 3:
                 // to balance
-                System.out.println(" Your balance is " + balance +  "\n");
+                System.out.println(" Your balance is " + balance );
                 System.out.println("==================");
                 anotherTransaction();
                 break;
@@ -130,7 +130,7 @@ public class Main {
     }
 
     private static void anotherTransaction() {
-        System.out.println(" Do you want another transaction?" + name + " \n\nPress 1 for anotherTransaction \n2 To exit. ");
+        System.out.println(" Do you want another transaction?" + name + " \n\n Press 1 for anotherTransaction \n 2 To exit. ");
         anotherTransaction = in.nextInt();
         if (anotherTransaction == 1) {
             transaction(); // Call method
