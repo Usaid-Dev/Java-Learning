@@ -19,7 +19,7 @@ public class Buyer {
     }
 
     void exchange(iPhone iphone){
-        System.out.println( this.iphone.model +" Take this bro , " + iphone.model + " Give another piece of this Iphone ");
+        System.out.println( this.iphone.model +" Take this bro , Give another piece of this phone ");
         this.iphone = iphone;
     }
 

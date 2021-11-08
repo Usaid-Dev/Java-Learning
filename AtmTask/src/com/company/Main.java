@@ -57,7 +57,7 @@ public class Main {
                 "---------------------");
 
         choice = in.nextInt();
-
+        
         switch (choice) {
 
             case 0:

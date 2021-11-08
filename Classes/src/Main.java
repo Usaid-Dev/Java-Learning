@@ -13,7 +13,6 @@
  * Encapsulation
  * */
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -85,9 +84,6 @@ public class Main {
 
             case 2:
                 shop.listBuyers();
-                if (buyer  0){
-                    System.out.println(" There is no buyer in the list ");
-                }
                 break;
 
             case 3:
